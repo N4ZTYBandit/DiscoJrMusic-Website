@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DiscoJR Music Bot</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #050510;
+      color: #f5f5f5;
+    }
+
+    header {
+      padding: 80px 20px;
+      background: radial-gradient(circle at top, #b300ff, #060612 60%);
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 52px;
+      margin-bottom: 10px;
+    }
+
+    p.subtitle {
+      font-size: 20px;
+      opacity: 0.9;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    nav {
+      background: #090912;
+      padding: 12px 20px;
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      border-bottom: 1px solid #2b2b3a;
+    }
+
+    nav a {
+      color: #e46bff;
+      text-decoration: none;
+      font-size: 16px;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .section {
+      padding: 50px 20px;
+      text-align: center;
+    }
+
+    .section h2 {
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+
+    .section p.section-sub {
+      opacity: 0.8;
+      max-width: 700px;
+      margin: 0 auto 30px;
+    }
+
+    .grid {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: #111122;
+      padding: 20px;
+      border-radius: 14px;
+      box-shadow: 0 0 15px rgba(170, 70, 255, 0.18);
+      text-align: left;
+    }
+
+    .card h3 {
+      margin-top: 0;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+      display: inline-block;
+      margin: 10px;
+      padding: 12px 28px;
+      border-radius: 999px;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+      text-decoration: none;
+    }
+
+    .btn-primary {
+      background: #b300ff;
+      color: #fff;
+    }
+
+    .btn-primary:hover {
+      background: #d52bff;
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: #fff;
+      border: 1px solid #b300ff;
+    }
+
+    .btn-secondary:hover {
+      background: #b300ff22;
+    }
+
+    .visualizer {
+      height: 110px;
+      max-width: 400px;
+      margin: 25px auto 0;
+      display: flex;
+      align-items: flex-end;
+      gap: 6px;
+    }
+
+    .bar {
+      width: 14px;
+      background: #d52bff;
+      border-radius: 20px 20px 0 0;
+      animation: bounce 1s infinite ease-in-out;
+    }
+
+    .bar:nth-child(2) { animation-delay: 0.1s; }
+    .bar:nth-child(3) { animation-delay: 0.2s; }
+    .bar:nth-child(4) { animation-delay: 0.3s; }
+    .bar:nth-child(5) { animation-delay: 0.4s; }
+    .bar:nth-child(6) { animation-delay: 0.5s; }
+
+    @keyframes bounce {
+      0% { height: 20px; }
+      50% { height: 100px; }
+      100% { height: 20px; }
+    }
+
+    footer {
+      background: #05050b;
+      border-top: 1px solid #232333;
+      padding: 15px 20px;
+      text-align: center;
+      font-size: 14px;
+      opacity: 0.8;
+      margin-top: 40px;
+    }
+
+    code {
+      background: #181828;
+      padding: 2px 4px;
+      border-radius: 4px;
+      font-size: 13px;
+    }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 38px; }
+      header { padding: 60px 16px; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="#features">Features</a>
+    <a href="#commands">Commands</a>
+    <a href="#setup">Setup</a>
+  </nav>
+
+  <header>
+    <h1>DiscoJR Music Bot</h1>
+    <p class="subtitle">
+      A clean, simple Discord music bot with play, skip, loop, shuffle and volume control.
+    </p>
+    <!-- Replace the # below with your real bot invite URL when you have it -->
+    <a href="#" class="btn-primary">Invite DiscoJR</a>
+    <a href="#setup" class="btn-secondary">GitHub Setup Guide</a>
+
+    <div class="visualizer">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
+  </header>
+
+  <section id="features" class="section">
+    <h2>Features</h2>
+    <p class="section-sub">Everything you need for a fun, simple music bot experience.</p>
+    <div class="grid">
+      <div class="card">
+        <h3>🎵 High Quality Audio</h3>
+        <p>Streams straight from YouTube with clear sound.</p>
+      </div>
+      <div class="card">
+        <h3>⏭️ Queue & Skip</h3>
+        <p>Add songs to the queue and skip instantly.</p>
+      </div>
+      <div class="card">
+        <h3>🔁 Loop & Shuffle</h3>
+        <p>Loop your favorite track or shuffle the whole queue.</p>
+      </div>
+      <div class="card">
+        <h3>🔊 Volume Control</h3>
+        <p>Change volume from quiet background to party mode.</p>
+      </div>
+      <div class="card">
+        <h3>🎧 Custom Status</h3>
+        <p>DiscoJR shows a listening status in Discord.</p>
+      </div>
+      <div class="card">
+        <h3>⚙️ Easy Setup</h3>
+        <p>Just drop the code, install dependencies and run.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="commands" class="section">
+    <h2>Commands</h2>
+    <p class="section-sub">Default prefix: <code>!</code></p>
+    <div class="grid">
+      <div class="card">
+        <h3><code>!play &lt;url&gt;</code></h3>
+        <p>Plays a song from a YouTube link and adds it to the queue.</p>
+      </div>
+      <div class="card">
+        <h3><code>!skip</code></h3>
+        <p>Skips the current track and moves to the next one in the queue.</p>
+      </div>
+      <div class="card">
+        <h3><code>!loop</code></h3>
+        <p>Toggles loop mode on the current song.</p>
+      </div>
+      <div class="card">
+        <h3><code>!shuffle</code></h3>
+        <p>Randomly shuffles the current queue.</p>
+      </div>
+      <div class="card">
+        <h3><code>!volume &lt;1-100&gt;</code></h3>
+        <p>Sets the playback volume.</p>
+      </div>
+      <div class="card">
+        <h3><code>!stop</code></h3>
+        <p>Stops the music player.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="setup" class="section">
+    <h2>GitHub Upload & Hosting (Quick Guide)</h2>
+    <p class="section-sub">
+      Follow these steps to put this website online using GitHub Pages.
+    </p>
+
+    <div class="grid">
+      <div class="card">
+        <h3>1. Create GitHub Repo</h3>
+        <p>
+          • Go to <a href="https://github.com" target="_blank">github.com</a><br/>
+          • Click <strong>New</strong> repository<br/>
+          • Name it something like <code>DiscoJR-Website</code><br/>
+          • Set it to <strong>Public</strong><br/>
+          • Click <strong>Create repository</strong>
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>2. Add index.html</h3>
+        <p>
+          • In your new repo, click <strong>Add file → Create new file</strong><br/>
+          • Name it <code>index.html</code><br/>
+          • Paste all of the code from this page into it<br/>
+          • Scroll down and click <strong>Commit changes</strong>
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>3. Turn On GitHub Pages</h3>
+        <p>
+          • Go to your repo’s <strong>Settings</strong><br/>
+          • On the left, click <strong>Pages</strong><br/>
+          • Under “Branch”, choose <strong>main</strong> and folder <strong>/(root)</strong><br/>
+          • Click <strong>Save</strong><br/>
+          • After a moment, GitHub will show your live website link
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>4. Use Your Link</h3>
+        <p>
+          • Your site will be at:<br/>
+          <code>https://YOUR-USERNAME.github.io/DiscoJR-Website/</code><br/>
+          • Share this link with your friends or put it in your Discord server!
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 DiscoJR Music Bot. Built with ❤️ and lo-fi vibes.
+  </footer>
+</body>
+</html>
